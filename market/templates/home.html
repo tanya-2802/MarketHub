@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+<style>
+/* Background */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c, #2e2e2e);
+  color: #f0f0f0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Glass Card */
+.hero-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  max-width: 650px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Title */
+.hero-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 35px;
+  color: #cccccc;
+}
+
+/* Button */
+.hero-btn {
+  padding: 12px 40px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #3a8ef6, #005bea);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 91, 234, 0.4);
+}
+
+.hero-btn:hover {
+  background: linear-gradient(135deg, #005bea, #3a8ef6);
+  transform: translateY(-2px);
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+  <div class="hero-card">
+    <h1 class="hero-title">MarketHub</h1>
+    <p class="hero-subtitle">
+      Welcome to <b>MarketHub</b> — your premium virtual marketplace.<br>
+      Trade smarter, grow your budget, and enjoy a seamless experience<br>
+      in a modern, elegant marketplace.
+    </p>
+    <a class="hero-btn" href="{{ url_for('market_page') }}">Get Started</a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>MarketHub - {% block title %}{% endblock %}</title>
+
+      <!-- Bootstrap 4.5 -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+      <!-- Font Awesome -->
+      <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+      <style>
+         body {
+            background-color: #212121;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         }
+         .navbar-brand {
+            font-weight: bold;
+            color: #00ff99 !important;
+            text-shadow: 0px 0px 5px #00ff99;
+         }
+         .alert {
+            border-radius: 10px;
+         }
+         footer {
+            background: #111;
+            padding: 15px;
+            text-align: center;
+            color: #bbb;
+            margin-top: 40px;
+         }
+      </style>
+
+      {% block head %}{% endblock %}
+   </head>
+   <body>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow">
+         <a class="navbar-brand" href="{{ url_for('home_page') }}">MarketHub</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                  <a class="nav-link" href="{{ url_for('home_page') }}">Home</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('market_page') }}">Market</a>
+               </li>
+            </ul>
+            {% if current_user.is_authenticated %}
+            <ul class="navbar-nav">
+               <li class="nav-item">
+                  <a class="nav-link" style="color: lawngreen; font-weight: bold">
+                     <i class="fas fa-coins"></i>
+                     {{ current_user.prettier_budget }}
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link">Welcome, {{ current_user.username }}</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link text-danger" href="{{ url_for('logout_page') }}">Logout</a>
+               </li>
+            </ul>
+            {% else %}
+            <ul class="navbar-nav">
+               <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('login_page') }}">Login</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('register_page') }}">Register</a>
+               </li>
+            </ul>
+            {% endif %}
+         </div>
+      </nav>
+
+      <!-- Flash Messages -->
+      <div class="container mt-3">
+         {% with messages = get_flashed_messages(with_categories=true) %}
+           {% if messages %}
+              {% for category, message in messages %}
+                 <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                     {{ message }}
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                     </button>
+                 </div>
+              {% endfor %}
+           {% endif %}
+         {% endwith %}
+      </div>
+
+      <!-- Page Content -->
+      <div class="container-fluid p-0">
+         {% block content %}{% endblock %}
+      </div>
+
+      <!-- Footer -->
+      <footer>
+         © 2025 MarketHub. All Rights Reserved.
+      </footer>
+
+      <!-- Scripts -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   </body>
+</html>
