@@ -1,8 +1,6 @@
 # MarketHub: An Online Marketplace Web Application
 
-MarketHub is a full-stack simulated marketplace built with Python and Flask. This application provides a hands-on learning environment for e-commerce by granting each user a starting budget to practice buying and selling items. The core of the platform is to allow users to experience making a profit or loss based on their trading decisions in a secure, sandbox environment.
-
-It features a clean, responsive user interface and robust backend logic for handling all aspects of the simulation, including product management, user authentication, and transaction histories.
+MarketHub is a full-stack simulated marketplace built with Python and Flask. This application provides a hands-on learning environment for e-commerce by granting each user a starting budget to practice buying and selling items. The core of the platform is to allow users to experience making a profit or loss based on their trading decisions in a secure, sandbox environment.It features a clean, responsive user interface and robust backend logic for handling all aspects of the simulation, including product management, user authentication, and transaction histories.
 ---
 
 ### Screenshots
