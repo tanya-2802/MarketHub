@@ -1,0 +1,9 @@
+# How to run the project
+
+# 1. Activate environment
+# .\venv\Scripts\activate
+
+# 2. Run the server
+# python run.py
+
+# Other notes...
