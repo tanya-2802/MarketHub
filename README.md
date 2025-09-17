@@ -8,13 +8,19 @@ It features a clean, responsive user interface and robust backend logic for hand
 ### Screenshots
 
 ![MarketHub Homepage](./public/A.png)
+---
 ![Login page](./public/B.png)
+---
 ![Market page](./public/C.png)
+---
 ![Item Info](./public/D.png)
+---
 ![Purchase](./public/E.png)
+---
 ![Owned Items ](./public/F.png)
+---
 ![Sell](./public/G.png)
-*(You can add more screenshots here if you like)*
+
 
 ---
 
